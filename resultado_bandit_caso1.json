@@ -1,0 +1,159 @@
+{
+  "errors": [],
+  "generated_at": "2026-05-06T18:41:16Z",
+  "metrics": {
+    "./Casos_De_Teste/TestCase1/Python_Flask\\Claude\\Login_Authentication.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 59,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./Casos_De_Teste/TestCase1/Python_Flask\\Copilot\\Login_Authentication.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 2,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 18,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./Casos_De_Teste/TestCase1/Python_Flask\\GPT4\\Login_Authentication.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 2,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 23,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./Casos_De_Teste/TestCase1/Python_Flask\\Gemini\\Login_Authentication.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 22,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 4,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 4,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 122,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "6 users = [\n7     {'username': 'admin', 'password': 'password123'},\n8     {'username': 'user', 'password': 'pass'}\n",
+      "col_offset": 26,
+      "end_col_offset": 36,
+      "filename": "./Casos_De_Teste/TestCase1/Python_Flask\\Copilot\\Login_Authentication.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: 'password123'",
+      "line_number": 7,
+      "line_range": [
+        7
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    },
+    {
+      "code": "7     {'username': 'admin', 'password': 'password123'},\n8     {'username': 'user', 'password': 'pass'}\n9 ]\n",
+      "col_offset": 25,
+      "end_col_offset": 35,
+      "filename": "./Casos_De_Teste/TestCase1/Python_Flask\\Copilot\\Login_Authentication.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: 'pass'",
+      "line_number": 8,
+      "line_range": [
+        8
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    },
+    {
+      "code": "7         \"username\": \"user1\",\n8         \"password_hash\": \"pbkdf2:sha256:260000$abc$1234567890abcdef...\"  # hash fict\u00edcio\n9     },\n10     \"admin\": {\n11         \"username\": \"admin\",\n12         \"password_hash\": \"pbkdf2:sha256:260000$xyz$abcdef1234567890...\"  # hash fict\u00edcio\n",
+      "col_offset": 8,
+      "end_col_offset": 23,
+      "filename": "./Casos_De_Teste/TestCase1/Python_Flask\\GPT4\\Login_Authentication.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: 'pbkdf2:sha256:260000$abc$1234567890abcdef...'",
+      "line_number": 8,
+      "line_range": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    },
+    {
+      "code": "11         \"username\": \"admin\",\n12         \"password_hash\": \"pbkdf2:sha256:260000$xyz$abcdef1234567890...\"  # hash fict\u00edcio\n13     }\n14 }\n15 \n16 @app.route('/login', methods=['POST'])\n",
+      "col_offset": 8,
+      "end_col_offset": 23,
+      "filename": "./Casos_De_Teste/TestCase1/Python_Flask\\GPT4\\Login_Authentication.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: 'pbkdf2:sha256:260000$xyz$abcdef1234567890...'",
+      "line_number": 12,
+      "line_range": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    }
+  ]
+}
